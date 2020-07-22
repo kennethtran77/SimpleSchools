@@ -1,5 +1,6 @@
 package simpleschools.gui;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import simpleschools.SimpleSchools;
@@ -161,12 +162,12 @@ public class SearchEditGrade extends Page {
         btnSort.setOnAction(e -> {
             // Use merge sort to sort result list
             if (table.getItems().size() == main.grades.size()) { // Merge the actual ArrayList
-                main.sortGrades(Criteria.NAME, main.grades);
+                Collections.sort(main.grades, (a, b) -> Criteria.NAME.compare(a, b));
                 
                 table.getItems().clear();
                 table.getItems().addAll(main.grades);
             } else
-                main.sortGrades(Criteria.NAME, table.getItems());
+                Collections.sort(main.grades, (a, b) -> Criteria.NAME.compare(a, b));
         });
         
         // Select Row Event Handler

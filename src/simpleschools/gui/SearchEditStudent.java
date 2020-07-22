@@ -1,5 +1,6 @@
 package simpleschools.gui;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -251,12 +252,12 @@ public class SearchEditStudent extends Page {
         btnSort.setOnAction(sortEvent -> {
             // Use merge sort to sort result list
             if (tableStudents.getItems().size() == getMain().students.size()) { // Merge the actual ArrayList
-                getMain().sortStudents(cbSortCriteria.getValue(), getMain().students);
+                Collections.sort(main.students, (a, b) -> cbSortCriteria.getValue().compare(a, b));
                 
                 tableStudents.getItems().clear();
                 tableStudents.getItems().addAll(getMain().students);
             } else // Merge the search results
-                getMain().sortStudents(cbSortCriteria.getValue(), tableStudents.getItems());
+                Collections.sort(main.students, (a, b) -> cbSortCriteria.getValue().compare(a, b));
         });
         
         // Select Student Row Event Handler

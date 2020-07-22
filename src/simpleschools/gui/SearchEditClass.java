@@ -1,5 +1,6 @@
 package simpleschools.gui;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import simpleschools.SimpleSchools;
@@ -224,12 +225,12 @@ public class SearchEditClass extends Page {
         btnSort.setOnAction(e -> {
             // Use merge sort to sort result list
             if (table.getItems().size() == main.classes.size()) { // Merge the actual ArrayList
-                main.sortClasses(cbSortCriteria.getValue(), main.classes);
+                Collections.sort(main.classes, (a, b) -> cbSortCriteria.getValue().compare(a, b));
                 
                 table.getItems().clear();
                 table.getItems().addAll(main.classes);
             } else
-                main.sortClasses(cbSortCriteria.getValue(), table.getItems());
+                Collections.sort(main.classes, (a, b) -> cbSortCriteria.getValue().compare(a, b));
         });
         
         // Select Row Event Handler
