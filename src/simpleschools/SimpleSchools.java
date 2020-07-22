@@ -82,7 +82,7 @@ public class SimpleSchools extends Application {
         root.setCenter(new Dashboard(this).getComponent());
         root.setId("page");
 
-        // Stage
+        // Scene
         Scene scene = new Scene(root, 1075, 790);
         scene.getStylesheets().add("simpleschools/css/styles.css");
 
