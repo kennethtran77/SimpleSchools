@@ -9,10 +9,10 @@ Programmed in Java 8 using JavaFX (no FXML).
 
 ## Key Features
 
-![Search, edit, or remove a course](https://pasteboard.co/JjcbzEo.png)
+![Search, edit, or remove a course](https://img.techpowerup.org/200724/ss2.png)
 
 Keep track of all your data by searching, and sorting lists based on your desired criteria.
 
-![Search, edit, or remove a student](https://pasteboard.co/JjcbmRZ.png)
+![Search, edit, or remove a student](https://img.techpowerup.org/200724/ss1.png)
 
 Store entries for each student for each of their classes, taking into account weight factors that influence the student’s grade.
